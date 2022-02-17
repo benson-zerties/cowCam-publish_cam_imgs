@@ -40,6 +40,7 @@ async def capture_image(screen_capture_url, q, period_s):
                 msg = ZmqMsgDetectionResult()
                 msg.header = b''
                 msg.image = r.content
+                msg.timestamp = bytes(str(int(time.time())), encoding='utf-8')
                 msg.result = b''
                 q.put_nowait(msg)
         await asyncio.sleep(period_s)

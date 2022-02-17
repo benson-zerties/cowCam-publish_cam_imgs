@@ -8,3 +8,4 @@ class ZmqMsgDetectionResult(ZmqMsgMultiPart):
 
     image = b""
     result   = b""
+    timestamp = b""
